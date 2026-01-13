@@ -10,6 +10,5 @@ class Solution:
                 di[i] += 1
         sorted_dict = sorted(di.items(), key = lambda x : x[1] , reverse = True)
 
-        res = [i[0] for i in sorted_dict[:k]]
+        res = [i[0] for i in sorted_dict[:k]] 
         return res
-    
