@@ -12,7 +12,7 @@ class Solution:
         for pos in map :
             time = (target - pos) / map[pos]
 
-            if not stack and time > stack[-1]
+            if not stack or time > stack[-1]
                 stack.append(time)
             
         return len(stack)
