@@ -10,4 +10,4 @@ class Solution:
             preorder_helper(node.right)
 
         preorder_helper(root)
-        return result   
+        return result       
