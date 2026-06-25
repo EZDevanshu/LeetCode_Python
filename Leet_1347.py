@@ -13,5 +13,4 @@ class Solution:
         for i in range(len(freqT)) :
             ans += abs(freqS[i] - freqT[i])
 
-        return ans // 2
-        
+        return ans // 2 
