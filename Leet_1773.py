@@ -15,9 +15,6 @@ class Solution:
             
         if ruleKey == "name" :
             for i in items :
-                if i[2] == ruleValue :
-                    count += 1
+                if i[ 2] == ruleValue :
+                    count += 1  
             return count
-                
-        
-            
