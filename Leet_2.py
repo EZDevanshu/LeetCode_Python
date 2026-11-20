@@ -1,19 +1,28 @@
-from typing import List
-
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        map1 = {}
+    def addTwoNumbers(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
+        dummy = ListNode(0)
+        cur = dummy 
+        total = 0
+        carry = 0
+        while l1 is not None or l2 is not None or carry != 0 :
 
-        for i in range(len(nums)):
-            check = target - nums[i]
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
 
-            if check in map1:
-                return [map1[check], i]
 
-            map1[nums[i]] = i
+            total = v1 + v2 + carry 
+            digit = total % 10
+            carry = total // 10 
 
-        return []
-nums = [3, 2 , 4]
-target = 6
-obj = Solution()
-print(obj.twoSum(nums , target))
+            cur.next = ListNode(digit)
+            cur = cur.next 
+
+            if l1 : l1 = l1.next 
+            if l2 : l2 = l2.next 
+
+        return dummy.next
